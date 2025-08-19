@@ -1,4 +1,3 @@
-// @ts-nocheck
 const { antd, hooks, utils, orders, components, toast, constants } = api
 const { useState, useEffect, useCallback } = React
 const { OrderSide, OrderTimeInForce } = constants
