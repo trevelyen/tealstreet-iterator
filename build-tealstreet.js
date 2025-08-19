@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+// command to make pasteable script:
+// node app/tealstreet-iterator/build-tealstreet.js
+
 const fs = require('fs')
 const path = require('path')
 
