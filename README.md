@@ -8,7 +8,8 @@
 
 1. Navigate to `http://localhost:3000/tealstreet-iterator`
 2. Edit `component.tsx` to build your trading UI
-3. When finished, copy the contents of `component.tsx` and paste into the Tealstreet platform
+3. When finished, run `node build-tealstreet.js` to generate `component-tealstreet.tsx`
+4. Copy the contents of `component-tealstreet.tsx` and paste into Tealstreet
 
 ## Adapter Logic (Ignore This)
 
