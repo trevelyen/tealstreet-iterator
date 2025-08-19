@@ -10,6 +10,7 @@ const componentContent = fs.readFileSync(componentPath, 'utf8')
 // Remove the export default line and any comments about Next.js/TealStreet
 const tealstreetReady =
   componentContent
+    .replace(/^\/\/ @ts-nocheck.*$/gm, '')
     .replace(/^export default Component.*$/gm, '')
     .replace(/^\/\/ For development.*$/gm, '')
     .replace(/^\/\/ For Tealstreet:.*$/gm, '')
@@ -20,4 +21,4 @@ const outputPath = path.join(__dirname, 'component-ready.tsx')
 fs.writeFileSync(outputPath, tealstreetReady)
 
 console.log(`✅ Tealstreet-ready component generated: ${outputPath}`)
-console.log('📋 Copy the contents of component-tealstreet.tsx and paste into the Tealstreet IDE')
+console.log('📋 Copy the contents of component-tealstreet.tsx and paste into TealStreet')
