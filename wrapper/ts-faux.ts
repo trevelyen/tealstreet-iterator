@@ -2,7 +2,7 @@
 'use client'
 import React, { useState, useEffect, useCallback } from 'react'
 
-// This script is purely to prevent errors locally and should not be submitted when pasting your component.js back into TS
+// This script is purely to prevent errors locally and should not be submitted when pasting your component.tsx back into Tealstreet
 
 // Faux API
 const fauxApi = {
