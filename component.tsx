@@ -114,4 +114,4 @@ const Component = () => {
   return <div className='text-white p-2'>Build here</div>
 }
 
-export default Component
+Component
