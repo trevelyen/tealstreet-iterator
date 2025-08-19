@@ -2,6 +2,10 @@
 'use client'
 import { useEffect, useState } from 'react'
 import setupFauxApi from './ts-faux'
+
+// Initialize API immediately for SSR
+setupFauxApi()
+
 import Component from '../component'
 
 // Wrapper that sets up mocks and renders component
