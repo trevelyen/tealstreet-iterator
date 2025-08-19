@@ -111,7 +111,8 @@ const Component = () => {
     }
   }
 
-  return <div className='text-white p-2'>Build here</div>
+  return <div className='p-2 mt-20 max-w-3xl mx-auto bg-neutral-700 border border-neutral-500'>Build here</div>
 }
 
-Component
+// For development, will be removed in build
+export default Component
