@@ -119,9 +119,21 @@ const fauxApi = {
 if (typeof window !== 'undefined') {
   ;(window as any).api = fauxApi
   ;(window as any).React = React
+} else if (typeof global !== 'undefined') {
+  // For server-side rendering
+  ;(global as any).api = fauxApi
+  ;(global as any).React = React
 }
 
 // Export faux setup
 export default function setupFauxApi() {
+  // Ensure globals are set
+  if (typeof window !== 'undefined') {
+    ;(window as any).api = fauxApi
+    ;(window as any).React = React
+  } else if (typeof global !== 'undefined') {
+    ;(global as any).api = fauxApi
+    ;(global as any).React = React
+  }
   return null
 }
