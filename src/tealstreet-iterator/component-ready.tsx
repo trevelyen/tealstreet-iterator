@@ -3,6 +3,7 @@ const { useState, useEffect, useCallback } = React
 const { OrderSide, OrderTimeInForce } = constants
 
 const Component = () => {
+  toast.error('test');
   const [activeSymbol] = hooks.useActiveSymbol()
   const [activeAccount] = hooks.useActiveAccount()
   const market = hooks.useMarket(activeSymbol, activeAccount)
