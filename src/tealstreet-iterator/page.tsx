@@ -1,5 +1,5 @@
 'use client'
-import TealstreetComponent from '@/app/tealstreet-iterator/adapter/wrapper'
+import TealstreetComponent from '@/tealstreet-iterator/adapter/wrapper'
 
 export default function TealstreetPage() {
   return (
