@@ -1,4 +1,3 @@
-// @ts-nocheck
 const { antd, hooks, utils, orders, components, toast, constants } = api
 const { useState, useEffect, useCallback } = React
 const { OrderSide, OrderTimeInForce } = constants
@@ -43,7 +42,7 @@ const Component = () => {
   }, [ticker, side, price])
 
   const currentPosition = positions.find((p) => p.symbol === activeSymbol)
-
+ 
   const handlePlaceOrder = async () => {
     if (!activeSymbol || !activeAccount) {
       toast.error('Please select a symbol and account')
@@ -114,5 +113,4 @@ const Component = () => {
   return <div className='p-2 mt-20 max-w-3xl mx-auto bg-neutral-700 border border-neutral-500'>Build here</div>
 }
 
-// For development, will be removed in build
-export default Component
+Component
