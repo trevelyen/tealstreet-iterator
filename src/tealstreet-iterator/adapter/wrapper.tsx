@@ -1,7 +1,7 @@
-// @ts-nocheck
 'use client'
 import { useEffect, useState } from 'react'
 import setupFauxApi from './ts-faux'
+import { ToastContainer } from 'react-toastify'
 
 // Initialize API immediately for SSR
 setupFauxApi()
@@ -21,5 +21,8 @@ export default function TealStreetWrapper() {
     return <div className='p-8'>Loading Tealstreet component...</div>
   }
 
-  return <Component />
+  return <>
+    <ToastContainer />
+    <Component />
+  </>
 }

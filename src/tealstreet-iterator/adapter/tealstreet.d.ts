@@ -1,6 +1,7 @@
 import * as antd from 'antd'
 import _ from 'lodash'
 import * as icons from '@ant-design/icons'
+import type { toast as Toast } from 'react-toastify'
 
 import type { Market, Ticker, Position, Order, Candle, Balance, OrderBookUpdate } from "api-types"
 
@@ -230,12 +231,7 @@ declare global {
       error: (message?: any, ...args: any[]) => void
       debug: (message?: any, ...args: any[]) => void
     }
-    toast: {
-      success: (message: string) => void
-      error: (message: string) => void
-      warning: (message: string) => void
-      info: (message: string) => void
-    }
+    toast: typeof Toast,
     data: {
       sortBy: (array: any[], key: string, desc?: boolean) => any[]
       groupBy: (array: any[], key: string | ((item: any) => string)) => any

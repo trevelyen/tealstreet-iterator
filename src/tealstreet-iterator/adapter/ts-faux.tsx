@@ -4,6 +4,7 @@ import * as React from 'react'
 import * as antd from 'antd'
 import _ from 'lodash'
 import * as icons from '@ant-design/icons'
+import { toast } from 'react-toastify'
 
 // This script is purely to prevent errors locally and should not be submitted when pasting your component.tsx back into Tealstreet
 
@@ -58,10 +59,7 @@ const fauxApi = {
     QuickOrderButton: () => <button>Quick Order</button>,
     PostReduceOptions: () => <div>Post/Reduce Options</div>,
   },
-  toast: {
-    success: (msg: string) => console.log('✅', msg),
-    error: (msg: string) => console.error('❌', msg),
-  },
+  toast: toast,
   constants: {
     OrderSide: {
       Buy: 'Buy',
@@ -83,6 +81,7 @@ if (typeof window !== 'undefined') {
   ;(window as any).antd = antd
   ;(window as any).lodash = _
   ;(window as any).icons = icons
+  ;(window as any).toast = toast
 } else if (typeof globalThis !== 'undefined') {
   // For server-side rendering
   ;(globalThis as any).api = fauxApi
@@ -90,6 +89,7 @@ if (typeof window !== 'undefined') {
   ;(globalThis as any).antd = antd
   ;(globalThis as any).lodash = _
   ;(globalThis as any).icons = icons
+  ;(globalThis as any).toast = toast
 }
 
 // Export faux setup
@@ -101,12 +101,14 @@ export default function setupFauxApi() {
     ;(window as any).antd = antd
     ;(window as any).lodash = _
     ;(window as any).icons = icons
+    ;(window as any).toast = toast
   } else if (typeof globalThis !== 'undefined') {
     ;(globalThis as any).api = fauxApi
     ;(globalThis as any).React = React
     ;(globalThis as any).antd = antd
     ;(globalThis as any).lodash = _
     ;(globalThis as any).icons = icons
+    ;(globalThis as any).toast = toast
   }
   return null
 }
