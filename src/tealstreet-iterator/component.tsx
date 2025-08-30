@@ -1,10 +1,10 @@
+import * as React from 'react'
+
 const { antd, hooks, utils, orders, components, toast, constants } = api
 const { useState, useEffect, useCallback } = React
 const { OrderSide, OrderTimeInForce } = constants
 
 const Component = () => {
-  const [websocketUrl, setWebsocketUrl] = useState('')
-
   const [activeSymbol] = hooks.useActiveSymbol()
   const [activeAccount] = hooks.useActiveAccount()
   const market = hooks.useMarket(activeSymbol, activeAccount)
@@ -43,14 +43,8 @@ const Component = () => {
     }
   }, [ticker, side, price])
 
-  useEffect(() => {
-    if (websocketUrl) {
-      // Connect to websocket
-    }
-  }, [websocketUrl])
-
   const currentPosition = positions.find((p) => p.symbol === activeSymbol)
-
+ 
   const handlePlaceOrder = async () => {
     if (!activeSymbol || !activeAccount) {
       toast.error('Please select a symbol and account')
@@ -118,25 +112,7 @@ const Component = () => {
     }
   }
 
-  return <div className='p-2 mt-20 max-w-3xl mx-auto bg-neutral-700 border border-neutral-500'>
-    {/* this is going to be our list of alerts */}
-    {/* the alerts are going to come from our backend, which can be connected to via websocket */}
-    {/* the websocket URL can be configured in a settings modal */}
-    {/* the settings modal can be opened from the top toolbar */}
-    {/* TOOLBAR */}
-    <div className='flex justify-between items-center mb-4'>
-      <div className='flex gap-2'>
-          <antd.Input className='w-96' type="url" placeholder='Websocket URL' value={websocketUrl} onChange={(e) => setWebsocketUrl(e.target.value)}></antd.Input>
-      </div>
-      <div>
-        <antd.List>
-          <antd.List.Item>Alert 1</antd.List.Item>
-          <antd.List.Item>Alert 2</antd.List.Item>
-          <antd.List.Item>Alert 3</antd.List.Item>
-        </antd.List>
-      </div>
-    </div>
-  </div>
+  return <div className='p-2 mt-20 max-w-3xl mx-auto bg-neutral-700 border border-neutral-500'>Build here</div>
 }
 
 // For development, will be removed in build

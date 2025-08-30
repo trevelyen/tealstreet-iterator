@@ -1,56 +1,15 @@
-// @ts-nocheck
+
 'use client'
-import React, { useState, useEffect, useCallback } from 'react'
+import * as React from 'react'
+import * as antd from 'antd'
+import _ from 'lodash'
+import * as icons from '@ant-design/icons'
 
 // This script is purely to prevent errors locally and should not be submitted when pasting your component.tsx back into Tealstreet
 
 // Faux API
 const fauxApi = {
-  antd: {
-    Button: ({ children, onClick, ...props }: any) => (
-      <button
-        onClick={onClick}
-        {...props}>
-        {children}
-      </button>
-    ),
-    Input: ({ value, onChange, ...props }: any) => (
-      <input
-        value={value}
-        onChange={(e) => onChange?.(e.target.value)}
-        {...props}
-      />
-    ),
-    Space: ({ children, ...props }: any) => (
-      <div
-        style={{ display: 'flex', gap: '8px' }}
-        {...props}>
-        {children}
-      </div>
-    ),
-    Row: ({ children, ...props }: any) => (
-      <div
-        style={{ display: 'flex' }}
-        {...props}>
-        {children}
-      </div>
-    ),
-    Col: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-    Tag: ({ children, ...props }: any) => <span {...props}>{children}</span>,
-    Divider: () => <hr />,
-    Radio: ({ children, ...props }: any) => (
-      <input
-        type='radio'
-        {...props}
-      />
-    ),
-    Statistic: ({ title, value }: any) => (
-      <div>
-        <div>{title}</div>
-        <div>{value}</div>
-      </div>
-    ),
-  },
+  antd,
   hooks: {
     useActiveSymbol: () => ['BTC-USD'] as [string | undefined],
     useActiveAccount: () => ['main'] as [string | undefined],
@@ -113,16 +72,24 @@ const fauxApi = {
       GoodTillCancel: 'GoodTillCancel',
     },
   },
+  lodash: _,
+  icons
 }
 
 // Inject globals for development
 if (typeof window !== 'undefined') {
   ;(window as any).api = fauxApi
   ;(window as any).React = React
-} else if (typeof global !== 'undefined') {
+  ;(window as any).antd = antd
+  ;(window as any).lodash = _
+  ;(window as any).icons = icons
+} else if (typeof globalThis !== 'undefined') {
   // For server-side rendering
-  ;(global as any).api = fauxApi
-  ;(global as any).React = React
+  ;(globalThis as any).api = fauxApi
+  ;(globalThis as any).React = React
+  ;(globalThis as any).antd = antd
+  ;(globalThis as any).lodash = _
+  ;(globalThis as any).icons = icons
 }
 
 // Export faux setup
@@ -131,9 +98,15 @@ export default function setupFauxApi() {
   if (typeof window !== 'undefined') {
     ;(window as any).api = fauxApi
     ;(window as any).React = React
-  } else if (typeof global !== 'undefined') {
-    ;(global as any).api = fauxApi
-    ;(global as any).React = React
+    ;(window as any).antd = antd
+    ;(window as any).lodash = _
+    ;(window as any).icons = icons
+  } else if (typeof globalThis !== 'undefined') {
+    ;(globalThis as any).api = fauxApi
+    ;(globalThis as any).React = React
+    ;(globalThis as any).antd = antd
+    ;(globalThis as any).lodash = _
+    ;(globalThis as any).icons = icons
   }
   return null
 }

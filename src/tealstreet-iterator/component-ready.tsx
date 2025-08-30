@@ -42,7 +42,7 @@ const Component = () => {
   }, [ticker, side, price])
 
   const currentPosition = positions.find((p) => p.symbol === activeSymbol)
-
+ 
   const handlePlaceOrder = async () => {
     if (!activeSymbol || !activeAccount) {
       toast.error('Please select a symbol and account')

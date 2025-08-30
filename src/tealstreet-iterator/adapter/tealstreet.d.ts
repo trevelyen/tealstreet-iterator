@@ -1,11 +1,12 @@
 import * as antd from 'antd'
 import _ from 'lodash'
-import * as React from 'react'
+import * as icons from '@ant-design/icons'
 
 import type { Market, Ticker, Position, Order, Candle, Balance, OrderBookUpdate } from "api-types"
 
 declare global {
   const api: {
+    icons: typeof icons
     antd: typeof antd
     hooks: {
       useActiveSymbol: () => [string | undefined, (symbol: string) => void]
@@ -29,7 +30,7 @@ declare global {
         symbol?: string
         type?: 'market' | 'limit' | 'stop_market' | 'take_profit_market' | 'trailing_stop_market' | string[]
         status?: 'open' | 'closed' | 'canceled' | 'creating' | 'updating' | 'canceling'
-      }) => import("api-types").Order[]
+      }) => Order[]
     }
     // Note: The following hooks are intentionally omitted as they are not in the documentation:
     // - useCandles
@@ -44,7 +45,7 @@ declare global {
         account?: string
         type?: ('market' | 'limit' | 'stop_market' | 'take_profit_market' | 'trailing_stop_market') | string[]
         status?: 'open' | 'closed' | 'canceled' | 'creating' | 'updating' | 'canceling'
-      }) => import("api-types").Order[]
+      }) => Order[]
       getCandles: (symbol: string, timeframe: string, limit?: number) => Candle[]
       getOrderbook: (symbol: string, accountName?: string) => OrderBookUpdate
       getTicker: (symbol: string, accountName?: string) => Ticker | null
@@ -236,12 +237,12 @@ declare global {
       info: (message: string) => void
     }
     data: {
+      sortBy: (array: any[], key: string, desc?: boolean) => any[]
       groupBy: (array: any[], key: string | ((item: any) => string)) => any
-      uniqBy: (array: any[], iteratee: string | ((item: any) => any)) => any[]
-      sortBy: (array: any[], iteratee: string | ((item: any) => any)) => any[]
-      sumBy: (array: any[], iteratee: string | ((item: any) => number)) => number
-      take: (array: any[], n: number) => any[]
-      zip: (...arrays: any[][]) => any[]
+      sum: (array: number[]) => number
+      average: (array: number[]) => number
+      median: (array: number[]) => number
+      unique: (array: any[]) => any[]
       chunk: (array: any[], size: number) => any[]
     }
     constants: {
@@ -295,7 +296,7 @@ declare global {
     }
   }
 
-  const React: typeof React
+  const React: import('react')
 }
 
 export { }
