@@ -1,16 +1,11 @@
 #!/usr/bin/env node
 
-// command to make pasteable script:
-// node app/tealstreet-iterator/build-tealstreet.js
-
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'url';
 
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 
 // Read the component file
 const tealstreetIteratorPath = path.join(__dirname, 'src/tealstreet-iterator')
