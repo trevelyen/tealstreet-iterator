@@ -2,15 +2,14 @@
 
 ## What to Edit
 
-**Only edit `src/tealstreet-itrator/component.tsx`** - this contains your custom module.
+**Only edit `src/tealstreet-iterator/component.tsx`** - this contains your custom module.
 
 ## How to Use
 1. `pnpm i`
 2. `pnpm dev`
 3. Navigate to `http://localhost:5173`
-4. Edit `src/tealstreet-itrator/component.tsx` to build your custom module
-5. `pnpm build-tealstreet` gets auto ran when you save the `component.tsx` file
-6. The output is written to `src/tealstreet-iterator/component-ready.tsx`
+4. Edit `src/tealstreet-iterator/component.tsx` to build your custom module
+5. The Tealstreet-ready component automatically generates in `src/tealstreet-iterator/component-ready.tsx` when you save
 6. Copy the contents of `component-ready.tsx` and paste into Tealstreet
 
 ## Adapter Logic (Ignore This)
