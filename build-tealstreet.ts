@@ -63,7 +63,7 @@ if (scriptName) {
   fs.mkdirSync(versionPath, { recursive: true })
   
   // Save original component
-  const savedComponentPath = path.join(versionPath, 'component.tsx')
+  const savedComponentPath = path.join(versionPath, 'component-iterate.tsx')
   fs.writeFileSync(savedComponentPath, componentContent)
   
   // Save ready component

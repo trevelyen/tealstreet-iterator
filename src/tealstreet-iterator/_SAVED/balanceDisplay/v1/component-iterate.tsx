@@ -54,4 +54,3 @@ const Component = () => {
 
 // For development, will be removed in build
 export default Component
-
