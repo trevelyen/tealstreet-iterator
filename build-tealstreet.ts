@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 // Read the component file
 const tealstreetIteratorPath = path.join(__dirname, 'src/tealstreet-iterator')
-const componentPath = path.join(tealstreetIteratorPath, 'component.tsx')
+const componentPath = path.join(tealstreetIteratorPath, '_BUILD-HERE/component.tsx')
 const componentContent = fs.readFileSync(componentPath, 'utf8')
 
 // Remove the export default line and any comments about Next.js/Tealstreet
@@ -24,7 +24,7 @@ const tealstreetReady =
     .trim() + '\n\nComponent'
 
 // Write to output file
-const outputPath = path.join(tealstreetIteratorPath, 'component-ready.tsx')
+const outputPath = path.join(tealstreetIteratorPath, '_COPY-THIS/component-ready.tsx')
 fs.writeFileSync(outputPath, tealstreetReady)
 
 console.log(`✅ Tealstreet-ready component re-generated`)

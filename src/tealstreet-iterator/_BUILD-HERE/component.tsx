@@ -1,9 +1,10 @@
+
 const { hooks, utils } = api
 
 const Component = () => {
   const [activeAccount] = hooks.useActiveAccount()
   const balance = hooks.useBalance(activeAccount)
-  const combinedBalance = hooks.useCombinedBalance()
+  const combinedBalance = hooks.useCombinedBalance() 
 
   return (
     <div className='p-6 bg-gray-900'>
@@ -44,4 +45,5 @@ const Component = () => {
   )
 }
 
-Component
+// For development, will be removed in build
+export default Component

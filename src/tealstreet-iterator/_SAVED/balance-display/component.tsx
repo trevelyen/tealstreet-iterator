@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 const { hooks, utils } = api
 
 const Component = () => {
