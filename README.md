@@ -49,8 +49,8 @@ src/tealstreet-iterator/
 
 ### Auto-Versioning (Recommended)
 1. **Edit**: `src/tealstreet-iterator/_BUILD-HERE/component-iterate.tsx`
-2. **Add**: `const CustomModuleName = 'your-component-name'` at the top
-3. **Save**: Automatically creates versioned copies in `_SAVED/your-component-name/v1/`, `v2/`, etc.
+2. **Add**: `const CustomModuleName = 'yourComponentName'` at the top
+3. **Save**: Automatically creates versioned copies in `_SAVED/yourComponentName/v1/`, `v2/`, etc.
 4. **Copy & Paste**: Use `_COPY-THIS/component-ready.tsx` in Tealstreet
 
 ### Traditional Workflow
@@ -69,27 +69,7 @@ const Component = () => {
 
 export default Component
 ```
-Every save creates: `_SAVED/scalping-bot/v1/`, `v2/`, `v3/`... with complete history!
-
-## Example Components
-
-### Order Panel
-Quick order placement with size/price inputs, bracket orders support
-```bash
-cp examples/order-panel/component.tsx src/tealstreet-iterator/_BUILD-HERE/component-iterate.tsx
-```
-
-### Position Monitor  
-Real-time position tracking with close buttons and P&L display
-```bash
-cp examples/position-monitor/component.tsx src/tealstreet-iterator/_BUILD-HERE/component-iterate.tsx
-```
-
-### Risk Dashboard
-Portfolio risk analysis with alerts and position limits
-```bash
-cp examples/risk-dashboard/component.tsx src/tealstreet-iterator/_BUILD-HERE/component-iterate.tsx
-```
+Every save creates: `_SAVED/scalpingBot/v1/`, `v2/`, `v3/`... with complete history!
 
 ## API Reference
 

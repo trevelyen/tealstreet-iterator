@@ -79,8 +79,8 @@ This automatically creates:
 ## Multi-Component Development
 Build and manage **multiple specialized trading components** with full version control:
 
-### Using Example Components:
-1. Copy example to main component: `cp examples/balance-display/component.tsx src/tealstreet-iterator/_BUILD-HERE/component-iterate.tsx`
+### Using Saved Components:
+1. Copy saved component-iterate.tsx to main component: `cp _SAVED/balanceDisplay/component-iterate.tsx src/tealstreet-iterator/_BUILD-HERE/component-iterate.tsx`
 2. Add your `CustomModuleName` for auto-versioning
 3. Customize and iterate - each save creates a new version
 
