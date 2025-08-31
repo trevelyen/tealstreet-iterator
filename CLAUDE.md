@@ -25,23 +25,23 @@ For the complete Tealstreet API reference, see `TEALSTREET_API_DOCUMENTATION.md`
 ```
 src/tealstreet-iterator/
 ├── _BUILD-HERE/
-│   └── component-iterate.tsx   # Main component (add CustomModuleName for auto-save)
+│   └── component-iterate.tsx         # Main component (add CustomModuleName for auto-save)
 ├── _COPY-THIS/
-│   └── component-ready.tsx     # Auto-generated Tealstreet-ready version
-├── _SAVED/                     # Auto-versioned component history
-│   ├── simple-executor/        # Example: CustomModuleName = 'simple-executor'
-│   │   ├── v1/                 # First version
-│   │   │   ├── component.tsx           # Original source
-│   │   │   └── component-ready.tsx     # Tealstreet-ready version
-│   │   ├── v2/                 # Second version (auto-created on next save)
-│   │   │   ├── component.tsx
+│   └── component-ready.tsx           # Auto-generated Tealstreet-ready version
+├── _SAVED/                           # Auto-versioned component history
+│   ├── simple-executor/              # Example: CustomModuleName = 'simple-executor'
+│   │   ├── v1/                       # First version
+│   │   │   ├── component-iterate.tsx # Original source
+│   │   │   └── component-ready.tsx   # Tealstreet-ready version
+│   │   ├── v2/                       # Second version (auto-created on next save)
+│   │   │   ├── component-iterate.tsx
 │   │   │   └── component-ready.tsx
-│   │   └── v3/                 # Third version, etc...
-│   └── balance-display/        # Another component
+│   │   └── v3/                       # Third version, etc...
+│   └── balance-display/              # Another component
 │       ├── v1/
 │       └── v2/
-├── global-module.tsx           # Shared utilities & state (optional)
-└── adapter/                    # Development mocks (don't copy to Tealstreet)
+├── global-module.tsx                 # Shared utilities & state (optional)
+└── adapter/                          # Development mocks (don't copy to Tealstreet)
 ```
 
 ## Development Commands

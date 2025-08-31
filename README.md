@@ -26,19 +26,23 @@ Navigate to `http://localhost:5173` and start building!
 ```
 src/tealstreet-iterator/
 ├── _BUILD-HERE/
-│   └── component-iterate.tsx  # Main component (add CustomModuleName for auto-save)
+│   └── component-iterate.tsx         # Main component (add CustomModuleName for auto-save)
 ├── _COPY-THIS/
-│   └── component-ready.tsx    # Auto-generated (copy to Tealstreet)
-├── _SAVED/                    # Auto-versioned component history
-│   ├── priceTracker/         # Example: CustomModuleName = 'priceTracker'
-│   │   ├── v1/                # Version 1
-│   │   │   ├── component.tsx           # Your source
-│   │   │   └── component-ready.tsx     # Tealstreet-ready
-│   │   ├── v2/                # Version 2 (auto-created)
-│   │   └── v3/                # Version 3, etc...
-│   └── order-executor/        # Another component with versions
-├── global-module.tsx          # Shared utilities & state
-└── adapter/                   # Development mocks
+│   └── component-ready.tsx           # Auto-generated Tealstreet-ready version
+├── _SAVED/                           # Auto-versioned component history
+│   ├── simple-executor/              # Example: CustomModuleName = 'simple-executor'
+│   │   ├── v1/                       # First version
+│   │   │   ├── component-iterate.tsx # Original source
+│   │   │   └── component-ready.tsx   # Tealstreet-ready version
+│   │   ├── v2/                       # Second version (auto-created on next save)
+│   │   │   ├── component-iterate.tsx
+│   │   │   └── component-ready.tsx
+│   │   └── v3/                       # Third version, etc...
+│   └── balance-display/              # Another component
+│       ├── v1/
+│       └── v2/
+├── global-module.tsx                 # Shared utilities & state (optional)
+└── adapter/                          # Development mocks (don't copy to Tealstreet)
 ```
 
 ## Development Workflow
