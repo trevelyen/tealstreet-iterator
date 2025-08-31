@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify'
 // Initialize API immediately for SSR
 setupFauxApi()
 
-import Component from '../_BUILD-HERE/component'
+import Component from '../_BUILD-HERE/component-iterate'
 
 // Wrapper that sets up mocks and renders component
 export default function TealStreetWrapper() {

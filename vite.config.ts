@@ -9,7 +9,7 @@ export default defineConfig({
     react(), 
     pnpmHotUpdatePlugin(
       {
-        filePattern: "src/tealstreet-iterator/_BUILD-HERE/component.tsx",
+        filePattern: "src/tealstreet-iterator/_BUILD-HERE/component-iterate.tsx",
         command: "pnpm run build"
       }
     )

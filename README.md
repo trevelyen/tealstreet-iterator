@@ -4,6 +4,7 @@ A comprehensive development framework for building custom UI components for the 
 
 ## Features
 
+✅ **Auto-Versioning System** - Never lose work with automatic version control  
 ✅ **Multi-Component Support** - Build multiple specialized trading UIs  
 ✅ **Global Module** - Shared utilities and state across components  
 ✅ **Hot Reload** - Auto-generates Tealstreet-ready components on save  
@@ -25,9 +26,17 @@ Navigate to `http://localhost:5173` and start building!
 ```
 src/tealstreet-iterator/
 ├── _BUILD-HERE/
-│   └── component.tsx          # Main component (edit this)
+│   └── component-iterate.tsx  # Main component (add CustomModuleName for auto-save)
 ├── _COPY-THIS/
 │   └── component-ready.tsx    # Auto-generated (copy to Tealstreet)
+├── _SAVED/                    # Auto-versioned component history
+│   ├── price-tracker/         # Example: CustomModuleName = 'price-tracker'
+│   │   ├── v1/                # Version 1
+│   │   │   ├── component.tsx           # Your source
+│   │   │   └── component-ready.tsx     # Tealstreet-ready
+│   │   ├── v2/                # Version 2 (auto-created)
+│   │   └── v3/                # Version 3, etc...
+│   └── order-executor/        # Another component with versions
 ├── global-module.tsx          # Shared utilities & state
 ├── examples/                  # Component templates
 │   ├── order-panel/           # Quick order placement
@@ -38,29 +47,48 @@ src/tealstreet-iterator/
 
 ## Development Workflow
 
-1. **Single Component**: Edit `src/tealstreet-iterator/_BUILD-HERE/component.tsx`
+### Auto-Versioning (Recommended)
+1. **Edit**: `src/tealstreet-iterator/_BUILD-HERE/component-iterate.tsx`
+2. **Add**: `const CustomModuleName = 'your-component-name'` at the top
+3. **Save**: Automatically creates versioned copies in `_SAVED/your-component-name/v1/`, `v2/`, etc.
+4. **Copy & Paste**: Use `_COPY-THIS/component-ready.tsx` in Tealstreet
+
+### Traditional Workflow
+1. **Single Component**: Edit `component-iterate.tsx` without `CustomModuleName` for one-off components
 2. **Multiple Components**: Copy examples or create new ones
 3. **Shared Logic**: Add utilities to `global-module.tsx`
-4. **Copy & Paste**: Use auto-generated `_COPY-THIS/component-ready.tsx` in Tealstreet
+
+### Example with Auto-Versioning
+```jsx
+const CustomModuleName = 'scalping-bot'
+
+const Component = () => {
+  // Your trading component here
+  return <div>Scalping Bot v1</div>
+}
+
+export default Component
+```
+Every save creates: `_SAVED/scalping-bot/v1/`, `v2/`, `v3/`... with complete history!
 
 ## Example Components
 
 ### Order Panel
 Quick order placement with size/price inputs, bracket orders support
 ```bash
-cp examples/order-panel/component.tsx src/tealstreet-iterator/_BUILD-HERE/component.tsx
+cp examples/order-panel/component.tsx src/tealstreet-iterator/_BUILD-HERE/component-iterate.tsx
 ```
 
 ### Position Monitor  
 Real-time position tracking with close buttons and P&L display
 ```bash
-cp examples/position-monitor/component.tsx src/tealstreet-iterator/_BUILD-HERE/component.tsx
+cp examples/position-monitor/component.tsx src/tealstreet-iterator/_BUILD-HERE/component-iterate.tsx
 ```
 
 ### Risk Dashboard
 Portfolio risk analysis with alerts and position limits
 ```bash
-cp examples/risk-dashboard/component.tsx src/tealstreet-iterator/_BUILD-HERE/component.tsx
+cp examples/risk-dashboard/component.tsx src/tealstreet-iterator/_BUILD-HERE/component-iterate.tsx
 ```
 
 ## API Reference
@@ -90,8 +118,10 @@ import { utils, hooks, RiskManager } from "global"
 
 ## Important Notes
 
-- Hot reload automatically rebuilds `_COPY-THIS/component-ready.tsx` when you save
-- Only copy `_COPY-THIS/component-ready.tsx` to Tealstreet (not the development files)
-- Adapter files are for local development only
-- All Tealstreet APIs are documented with working examples
-- TypeScript types are automatically available
+- **Auto-Versioning**: Add `const CustomModuleName = 'name'` to automatically save versions
+- **Hot Reload**: Automatically rebuilds `_COPY-THIS/component-ready.tsx` when you save
+- **Copy Ready Files**: Only copy `_COPY-THIS/component-ready.tsx` to Tealstreet (not development files)
+- **Version History**: Previous versions are never overwritten - complete development history preserved
+- **Adapter Files**: For local development only, don't copy to Tealstreet
+- **API Documentation**: All Tealstreet APIs documented with working examples in `CLAUDE.md`
+- **TypeScript**: Types automatically available with full IntelliSense support
