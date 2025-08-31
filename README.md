@@ -30,7 +30,7 @@ src/tealstreet-iterator/
 ├── _COPY-THIS/
 │   └── component-ready.tsx    # Auto-generated (copy to Tealstreet)
 ├── _SAVED/                    # Auto-versioned component history
-│   ├── price-tracker/         # Example: CustomModuleName = 'price-tracker'
+│   ├── priceTracker/         # Example: CustomModuleName = 'priceTracker'
 │   │   ├── v1/                # Version 1
 │   │   │   ├── component.tsx           # Your source
 │   │   │   └── component-ready.tsx     # Tealstreet-ready
@@ -38,10 +38,6 @@ src/tealstreet-iterator/
 │   │   └── v3/                # Version 3, etc...
 │   └── order-executor/        # Another component with versions
 ├── global-module.tsx          # Shared utilities & state
-├── examples/                  # Component templates
-│   ├── order-panel/           # Quick order placement
-│   ├── position-monitor/      # Position tracking
-│   └── risk-dashboard/        # Risk analysis
 └── adapter/                   # Development mocks
 ```
 
